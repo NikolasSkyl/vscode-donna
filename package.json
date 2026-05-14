@@ -1,0 +1,74 @@
+{
+  "name": "donna-lang",
+  "displayName": "Donna Language",
+  "description": "Donna language support for Visual Studio Code",
+  "version": "0.0.1",
+  "publisher": "donna-lang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donna-lang/vscode-donna"
+  },
+  "homepage": "https://donna-lang.org",
+  "bugs": {
+    "url": "https://github.com/donna-lang/vscode-donna/issues"
+  },
+  "engines": { "vscode": "^1.87.0" },
+  "categories": ["Programming Languages"],
+  "keywords": ["donna", "donna-lang", "syntax highlighting", "tree-sitter"],
+  "activationEvents": ["onLanguage:donna"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "donna",
+        "aliases": ["Donna", "donna"],
+        "extensions": [".donna"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "donna",
+        "scopeName": "source.donna",
+        "path": "./syntaxes/donna.tmLanguage.json"
+      }
+    ],
+    "semanticTokenScopes": [
+      {
+        "scopes": {
+          "keyword": ["keyword.control.donna"],
+          "function": ["entity.name.function.donna"],
+          "function.call": ["entity.name.function.call.donna"],
+          "function.method.call": ["entity.name.function.method.call.donna"],
+          "type": ["entity.name.type.donna"],
+          "constructor": ["entity.name.tag.donna"],
+          "variable": ["variable.other.donna"],
+          "variable.parameter": ["variable.parameter.donna"],
+          "constant": ["variable.other.constant.donna"],
+          "module": ["entity.name.namespace.donna"],
+          "operator": ["keyword.operator.donna"],
+          "string": ["string.quoted.double.donna"],
+          "number": ["constant.numeric.donna"],
+          "boolean": ["constant.language.boolean.donna"],
+          "comment": ["comment.line.donna"],
+          "comment.doc": ["comment.doc.donna"]
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "npm run compile",
+    "vscode:prepublish": "npm run compile"
+  },
+  "dependencies": {
+    "web-tree-sitter": "^0.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.87.0",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Donna",
+  "scopeName": "source.donna",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.doc.donna",
+          "match": "////.*$"
+        },
+        {
+          "name": "comment.doc.donna",
+          "match": "///.*$"
+        },
+        {
+          "name": "comment.line.double-slash.donna",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.donna",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.donna",
+          "match": "\\\\([nrt\"\\\\]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4})"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.donna",
+          "match": "\\b(import|as|pub|const|type|opaque|external|fn|let|case|if|echo|panic|todo)\\b"
+        },
+        {
+          "name": "constant.language.donna",
+          "match": "\\b(True|False|Nil)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.donna",
+          "match": "\\b(or|and)\\b"
+        }
+      ]
+    },
+    "types": {
+      "name": "entity.name.type.donna",
+      "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.donna",
+          "match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9][0-9_]*)?\\b"
+        },
+        {
+          "name": "constant.numeric.hex.donna",
+          "match": "\\b0[xX][0-9a-fA-F_]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.donna",
+          "match": "\\b0[bB][01_]+\\b"
+        },
+        {
+          "name": "constant.numeric.octal.donna",
+          "match": "\\b0[oO][0-7_]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.donna",
+          "match": "\\b[0-9][0-9_]*\\b"
+        }
+      ]
+    },
+    "operators": {
+      "name": "keyword.operator.donna",
+      "match": "(->|\\|>|==|!=|<=\\.|>=\\.|<\\.|>\\.|<=|>=|<>|&&|\\|\\||[+\\-*/%!<>=]|\\.\\.|\\+\\.|-\\.|\\.\\*\\.|\\.\\/.)"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.brackets.donna",
+          "match": "[()\\[\\]]"
+        },
+        {
+          "name": "punctuation.delimiter.donna",
+          "match": "[,.:@#]"
+        }
+      ]
+    }
+  }
+}
