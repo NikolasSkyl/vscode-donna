@@ -9,10 +9,7 @@
     "type": "git",
     "url": "https://github.com/donna-lang/vscode-donna"
   },
-  "homepage": "https://donna-lang.org",
-  "bugs": {
-    "url": "https://github.com/donna-lang/vscode-donna/issues"
-  },
+
   "engines": { "vscode": "^1.87.0" },
   "categories": ["Programming Languages"],
   "keywords": ["donna", "donna-lang", "syntax highlighting", "tree-sitter"],

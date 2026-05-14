@@ -16,7 +16,14 @@ VS Code 1.87 or later.
 
 ## Installation
 
-Search for **Donna Language** in the VS Code Extensions panel, or install from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=donna-lang.donna-lang).
+```bash
+git clone https://github.com/donna-lang/vscode-donna ~/.vscode/extensions/donna-lang
+cd ~/.vscode/extensions/donna-lang
+npm install
+npm run compile
+```
+
+Restart VS Code. Files with the `.donna` extension will be automatically detected.
 
 ## Usage
 
@@ -30,8 +37,8 @@ A lightweight TextMate grammar is also bundled as a fallback for instant colorin
 
 ## Links
 
-- [Donna language](https://donna-lang.org)
-- [GitHub organization](https://github.com/donna-lang)
+- [Donna](https://donna-lang.org)
+- [GitHub](https://github.com/donna-lang)
 - [tree-sitter-donna](https://github.com/donna-lang/tree-sitter-donna)
 
 ## License
